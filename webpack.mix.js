@@ -13,3 +13,10 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.options({processCssUrls: false})
+    .js('resources/admin/js/admin.js', 'public/js/admin')
+    .sass('resources/admin/sass/admin.scss', 'public/css/admin')
+    .version();
+
+mix.copy('node_modules/tinymce/skins', 'public/css/skins');

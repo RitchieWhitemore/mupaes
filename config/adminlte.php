@@ -179,16 +179,23 @@ return [
             'topnav' => true,
         ],
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'text' => 'Перейти на сайт',
+            'url' => '/',
+            'target' => '_blank',
+            'icon' => 'fas fa-external-link-alt',
+            'topnav' => true,
         ],
         [
-            'text' => 'pages',
+            'text' => 'Категории',
+            'url' => 'admin/categories',
+            'icon' => 'far fa-fw fa-folder',
+            'active' => ['admin/categories', 'admin/categories/*']
+        ],
+        [
+            'text' => 'Страницы',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'active' => ['admin/pages', 'admin/pages/*']
         ],
         ['header' => 'account_settings'],
         [
@@ -307,7 +314,7 @@ return [
         ],
         [
             'name' => 'Select2',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -356,6 +363,38 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'myAssets',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/css/admin/admin.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/js/admin/admin.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'tinymce',
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/css/admin/admin.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.tiny.cloud/1/8npxetdfz3sc41v6fsrbqwe5k732bnit2i56e00ilwui4jwp/tinymce/5/tinymce.min.js',
                 ],
             ],
         ],
