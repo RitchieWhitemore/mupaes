@@ -29,5 +29,8 @@ Route::group(
 
         Route::resource('categories', 'CategoryController');
         Route::resource('pages', 'PageController');
+        Route::put('pages/{page}/upload', 'PageController@upload')->name('page.upload');
+        Route::get('pages/{page}/upload', 'PageController@getFiles')->name('page.files');
+        Route::delete('pages/upload/{file}', 'PageController@deleteFile')->name('page.deleteFile');
     }
 );

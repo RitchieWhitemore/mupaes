@@ -17,6 +17,13 @@
                            href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home"
                            aria-selected="true">Основные</a>
                     </li>
+                    @if (Route::getCurrentRoute()->getActionMethod() == 'edit')
+                        <li class="nav-item">
+                            <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill"
+                               href="#custom-tabs-three-gallery" role="tab" aria-controls="custom-tabs-three-gallery"
+                               aria-selected="false">Галерея</a>
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill"
                            href="#custom-tabs-three-seo" role="tab" aria-controls="custom-tabs-three-seo"
@@ -34,7 +41,7 @@
                                     <img src="{{$url}}">
                                 @endif
                                 {!! Form::file('image', 'Изображение') !!}
-                                {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10, 'class' => 'summernote'])!!}
+                                {!!Form::textarea('text', 'Текст')->attrs(['rows' => 10])->id('tinymce') !!}
                             </div>
                             <div class="col-sm-2 col-12">
 
@@ -46,6 +53,14 @@
                             </div>
                         </div>
                     </div>
+                    @if (Route::getCurrentRoute()->getActionMethod() == 'edit')
+
+                        <div class="tab-pane fade" id="custom-tabs-three-gallery" role="tabpanel"
+                             aria-labelledby="custom-tabs-three-gallery-tab">
+                            @include('admin.page._upload-form')
+                        </div>
+
+                    @endif
                     <div class="tab-pane fade" id="custom-tabs-three-seo" role="tabpanel"
                          aria-labelledby="custom-tabs-three-seo-tab">
                         {!! Form::text('meta_title', 'Meta title') !!}

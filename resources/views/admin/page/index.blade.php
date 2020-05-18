@@ -34,10 +34,6 @@
                 <td><a href="{{ route('admin.pages.show', $page) }}">{{ $page->name }}</a></td>
                 <td>{{ $page->slug }}</td>
                 <td class="action-column">
-                    <a href="{{route('admin.short_prices.short_prices.index', ['shortPriceType' => 'pages', 'owner' => $page])}}"
-                       title="Краткий прайс"
-                       aria-label="Краткий прайс">
-                        <i class="fas fa-comment-dollar"></i></a>
                     <a href="{{route('admin.pages.show', $page)}}" title="Просмотр" aria-label="Просмотр">
                         <i class="far fa-eye"></i></a>
                     <a href="{{route('admin.pages.edit', $page)}}" title="Редактировать"

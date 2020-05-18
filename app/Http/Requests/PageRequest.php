@@ -38,11 +38,11 @@ class PageRequest extends FormRequest
         ];
 
         if ($this->isMethod('PUT')) {
-            $service = $this->route()->parameter('service');;
+            $page = $this->route()->parameter('page');;
             $rules['slug'] = [
                 'nullable',
                 'string',
-                Rule::unique('services', 'slug')->ignore($service),
+                Rule::unique('pages', 'slug')->ignore($page),
             ];
         }
 
