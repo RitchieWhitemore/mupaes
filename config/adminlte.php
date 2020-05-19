@@ -373,12 +373,12 @@ return [
                 [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '/css/admin/admin.css',
+                    'location' => '/admin/css/admin.css',
                 ],
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '/js/admin/admin.js',
+                    'location' => '/admin/js/admin.js',
                 ],
             ],
         ],
