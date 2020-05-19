@@ -34,3 +34,7 @@ Route::group(
         Route::delete('pages/upload/{file}', 'PageController@deleteFile')->name('page.deleteFile');
     }
 );
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

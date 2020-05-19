@@ -19,7 +19,8 @@
         "laravel/tinker": "^1.0",
         "mews/purifier": "^3.2",
         "netojose/laravel-bootstrap-4-forms": "^3.0",
-        "spatie/laravel-medialibrary": "^7.0.0"
+        "spatie/laravel-medialibrary": "^7.0.0",
+        "unisharp/laravel-filemanager": "^2.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

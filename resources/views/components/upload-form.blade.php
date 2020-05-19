@@ -11,7 +11,7 @@
         <span class="btn btn-success fileinput-button">
               <i class="fas fa-plus"></i>
               <span>Добавить файлы...</span>
-              <input type="file" name="files[]" multiple id="fileupload"/>
+              <input type="file" name="files[]" multiple/>
             </span>
         <button type="submit" class="btn btn-primary start">
             <i class="fas fa-arrow-circle-up"></i>
