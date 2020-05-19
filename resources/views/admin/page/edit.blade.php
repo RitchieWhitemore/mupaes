@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-    {!! Form::open()->multipart()->route('admin.pages.update', [$model])->method('put')->fill($model) !!}
+    {!! Form::open()->multipart()->route('admin.pages.update', [$model])->method('put')->fill($model)->id('fileupload') !!}
     @include('admin.page._form')
     {!!Form::submit("Сохранить")!!}
     {!! Form::close() !!}

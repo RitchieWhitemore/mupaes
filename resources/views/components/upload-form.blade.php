@@ -203,7 +203,7 @@
         });
 
         $('#fileupload').fileupload({
-            url: "{{route('admin.page.upload', ['page' => $model])}}",
+            url: "{{$uploadUrl}}",
             dataType: 'json',
         })
             .on('fileuploaddestroy', function (e, data) {
@@ -218,7 +218,7 @@
         $.ajax({
             // Uncomment the following to send cross-domain cookies:
             //xhrFields: {withCredentials: true},
-            url: "{{route('admin.page.files', ['page' => $model])}}",
+            url: "{{$getFileUrl}}",
             dataType: 'json',
             context: $('#fileupload')[0]
         })

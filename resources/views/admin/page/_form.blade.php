@@ -57,7 +57,10 @@
 
                         <div class="tab-pane fade" id="custom-tabs-three-gallery" role="tabpanel"
                              aria-labelledby="custom-tabs-three-gallery-tab">
-                            @include('admin.page._upload-form')
+                            @include('components.upload-form', [
+                            'uploadUrl' => route('admin.page.upload', ['page' => $model]),
+                            'getFileUrl' => route('admin.page.files', ['page' => $model]),
+                            ])
                         </div>
 
                     @endif
