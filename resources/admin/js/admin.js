@@ -23,7 +23,7 @@ $(document).ready(function () {
         ],
         toolbar: [
             'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | ',
-            'forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'
+            'forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl code'
         ],
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
