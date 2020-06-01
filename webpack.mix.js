@@ -12,16 +12,25 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
-
-mix.copy('resources/fonts/*', 'public/fonts');
-
-mix.options({processCssUrls: false})
-    .js('resources/admin/js/admin.js', 'public/assets/admin/js')
-    .sass('resources/admin/sass/admin.scss', 'public/assets/admin/css')
+    .js('resources/js/scripts.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('node_modules/bootstrap/dist/css', 'public/css')
+    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js')
+    .options({processCssUrls: false})
     .version();
 
-mix.copy('node_modules/tinymce/skins', 'public/css/skins');
+/*
+mix.copy('resources/fonts/!*', 'public/fonts')
+    .copy('resources/img/!*', 'public/img')
+    .copy('node_modules/bootstrap/dist/css/!*', 'public/css');
+*/
+
+mix.js('resources/admin/js/admin.js', 'public/assets/admin/js')
+    .sass('resources/admin/sass/admin.scss', 'public/assets/admin/css')
+    .options({processCssUrls: false})
+    .version();
+
+/*mix.copy('node_modules/tinymce/skins', 'public/css/skins');
 
 mix.copy('node_modules/blueimp-file-upload/img/loading.gif', 'public/assets/admin/css/img')
     .copy('node_modules/blueimp-file-upload/img/progressbar.gif', 'public/assets/admin/css/img')
@@ -41,6 +50,6 @@ mix.copy('node_modules/blueimp-file-upload/img/loading.gif', 'public/assets/admi
     .copy('node_modules/blueimp-file-upload/js/jquery.fileupload-video.js', 'public/assets/admin/js/blueimp')
     .copy('node_modules/blueimp-file-upload/js/jquery.fileupload-validate.js', 'public/assets/admin/js/blueimp')
     .copy('node_modules/blueimp-file-upload/js/jquery.fileupload-ui.js', 'public/assets/admin/js/blueimp')
-    .copy('node_modules/blueimp-file-upload/js/cors/jquery.xdr-transport.js', 'public/assets/admin/js/blueimp/cors');
+    .copy('node_modules/blueimp-file-upload/js/cors/jquery.xdr-transport.js', 'public/assets/admin/js/blueimp/cors');*/
 
 mix.browserSync('mupaes.loc');

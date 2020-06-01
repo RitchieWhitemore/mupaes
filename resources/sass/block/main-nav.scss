@@ -1,0 +1,118 @@
+.main-nav {
+    padding: 38px 15px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: $bg-color-light-blue;
+    overflow: scroll;
+
+    &--close {
+        display: none;
+    }
+}
+
+
+.main-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #afd9f9;
+
+    & a {
+        font-family: 'Open Sans';
+        color: white;
+    }
+}
+
+.main-nav__sub-list {
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    list-style: none;
+
+    & .main-nav__item {
+        margin: 0;
+        margin-bottom: 8px;
+        padding: 0;
+        border-bottom: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    & .main-nav__item a {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 576px) {
+    .main-nav__slogan-wrapper {
+        padding-left: 80px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column-reverse;
+        position: static;
+        background-color: transparent;
+        width: 885px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .main-nav__slogan-wrapper {
+        display: none;
+    }
+
+    .main-nav__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-nav__item {
+        margin: 0;
+    }
+
+    .main-nav__info-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-nav__info {
+        padding-left: 56px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        font-size: 14px;
+
+        &--phone {
+            background-image: url("/img/phone.png");
+        }
+
+        &--address {
+            background-image: url("/img/map.png");
+
+            br {
+                display: block;
+            }
+        }
+
+        &--time {
+            background-image: url("/img/time.png");
+            width: 150px;
+        }
+    }
+}
