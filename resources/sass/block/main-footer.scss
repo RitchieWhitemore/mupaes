@@ -1,0 +1,48 @@
+.main-footer {
+    padding: 18px 0;
+    background-color: $bg-color-light-blue;
+}
+
+.main-footer__menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+.main-footer__menu-list li {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 14px;
+    width: 50%;
+}
+
+.main-footer__menu-list li a {
+    color: white;
+    font-size: 14px;
+}
+
+.main-footer p {
+    color: $font-color-orange;
+    font-size: 13px;
+}
+
+.main-footer__phone {
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 16px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 12px;
+    color: $font-color-orange !important;
+    text-align: right;
+    display: block;
+
+    & span {
+        font-size: 18px;
+        line-height: 20px;
+    }
+}

@@ -4,8 +4,26 @@ body {
 }
 
 .title {
+    margin-bottom: 24px;
     font-family: 'Merriweather';
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: bold;
     color: $font-color-blue;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+.content p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    line-height: 18px;
+    color: #1f3444;
+}
+
+.content img {
+    margin-bottom: 15px;
+    border-radius: 10px;
 }

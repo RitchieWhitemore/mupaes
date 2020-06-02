@@ -1,0 +1,29 @@
+.main-news h2 {
+    margin-bottom: 30px;
+    font-family: 'Merriweather';
+    font-size: 18px;
+    color: $font-color-blue;
+}
+
+.main-news ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-news ul li {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.main-news h3 {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: #00528f;
+}
+
+.main-news p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    line-height: 18px;
+}

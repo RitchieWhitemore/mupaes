@@ -58,7 +58,7 @@
     </div>
 </header>
 <main>
-    <div class="row">
+    <div class="row container no-gutters">
         <section class="col-12">
             <h1 class="title">Муниципальное унитарное предприятие
                 "Александровэлектросеть"
@@ -81,7 +81,7 @@
                     сетям электроэнергии, эксплуатация электрических сетей (воздушных и кабельных ЛЭП 6/0,4кВ) и
                     оборудования
                     распределительных пунктов и трансформаторных подстанций. </p>
-                <img src="">
+                <img src="/img/image.jpg" class="img-fluid">
             </div>
         </section>
         <aside class="col-12">
@@ -113,24 +113,24 @@
         </aside>
     </div>
 </main>
-<footer>
-    <div class="row">
+<footer class="main-footer">
+    <div class="row container no-gutters mb-3">
         <div class="col-12">
-            <ul class="footer-menu__list">
-                <li>Главная</li>
-                <li>Контакты</li>
-                <li>Раскрытие информации</li>
-                <li>Личный кабинет</li>
-                <li>Галерея</li>
+            <ul class="main-footer__menu-list">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Контакты</a></li>
+                <li><a href="">Раскрытие информации</a></li>
+                <li><a href="">Личный кабинет</a></li>
+                <li><a href="">Галерея</a></li>
             </ul>
         </div>
     </div>
-    <div class="row">
+    <div class="row container no-gutters">
         <div class="col-6">
             <p>г. Александров, Красный переулок, д.8</p>
         </div>
-        <div class="col-6">
-            <a href="" class="main-header__phone">+7 (49244) <span>2-34-34</span></a>
+        <div class="col-6 d-flex">
+            <a tel="+74924423434" class="main-footer__phone">+7 (49244) <span>2-34-34</span></a>
         </div>
     </div>
 </footer>
