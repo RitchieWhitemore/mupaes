@@ -26,4 +26,31 @@
     font-family: 'Open Sans';
     font-size: 14px;
     line-height: 18px;
+    color: #323537;
+}
+
+@media (min-width: 992px) {
+    .main-news h2 {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .main-news li {
+        padding-left: 25px;
+
+        &:hover {
+            padding-left: 24px;
+            border-left: 1px solid $border-red;
+        }
+    }
+
+    .main-news h3 {
+        line-height: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-news p {
+        font-size: 14px;
+        line-height: 18px;
+    }
 }

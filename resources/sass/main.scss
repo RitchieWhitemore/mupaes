@@ -26,4 +26,42 @@ body {
 .content img {
     margin-bottom: 15px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    main {
+        padding-top: 45px;
+        padding-bottom: 25px;
+        background-color: #3791d6;
+        background-image: url("/img/main-background.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .content-container {
+        margin: 0 auto;
+        padding: 40px 30px;
+        border-radius: 20px;
+        background-color: #eaf4fc;
+    }
+
+    .title {
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .content {
+        margin: 0;
+    }
+
+    .content p {
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
