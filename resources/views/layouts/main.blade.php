@@ -46,10 +46,12 @@
                     </ul>
                 </li>
                 <li class="main-nav__item"><a href="" class="main-nav__link">Потребителям</a></li>
-                <li class="main-nav__item"><a href="" class="main-nav__link">Закупки<i
+                <li class="main-nav__item"><a class="main-nav__link">Закупки<i
                             class="fas fa-caret-down"></i></a>
                     <ul class="main-nav__sub-list">
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Информация о закупочной
+                        <li class="main-nav__sub-item"><a href="{{route('information')}}"
+                                                          class="main-nav__link {{Request::routeIs('information') ? 'main-nav__link--active' : ''}}">Информация
+                                о закупочной
                                 деятельности</a></li>
                         <li class="main-nav__sub-item"><a href="" class="main-nav__link">Отчеты о закупках</a></li>
                         <li class="main-nav__sub-item"><a href="" class="main-nav__link">Информация о закупках</a></li>

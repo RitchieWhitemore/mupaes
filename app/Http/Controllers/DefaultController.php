@@ -15,4 +15,9 @@ class DefaultController extends Controller
     {
         return view('public.contacts');
     }
+
+    public function information()
+    {
+        return view('public.information');
+    }
 }

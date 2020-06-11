@@ -1,0 +1,53 @@
+.document__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.document__item {
+    cursor: pointer;
+    padding-left: 60px;
+    margin-bottom: 30px;
+    position: relative;
+
+    & a {
+        color: #0f4f7f;
+        text-decoration: solid;
+    }
+
+}
+
+.document__item::before {
+    display: block;
+    position: absolute;
+    //color: $font-color-orange;
+    left: 7px;
+    top: 0px;
+    font-size: 50px;
+    font-family: 'Font Awesome 5 Free';
+}
+
+.document__item-word::before {
+    color: blue;
+    content: '\f1c2';
+}
+
+.document__item-excel::before {
+    color: green;
+    content: '\f1c3';
+}
+
+.document__item-archive::before {
+    color: #4c266c;
+    content: '\f1c6';
+}
+
+@media (min-width: 992px) {
+    .document__item {
+        padding-left: 40px;
+    }
+
+    .document__item::before {
+        font-size: 30px;
+    }
+}

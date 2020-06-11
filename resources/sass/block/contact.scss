@@ -1,0 +1,60 @@
+.contact__list {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+
+    & li {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 30px;
+        font-size: 14px;
+        color: $font-color-blue;
+    }
+
+    & li a {
+        color: $font-color-blue;
+    }
+
+    & li::before {
+        display: block;
+        position: absolute;
+        color: $font-color-orange;
+        left: 7px;
+        top: 0px;
+        font-size: 25px;
+        font-family: 'Font Awesome 5 Free';
+    }
+
+    & li.contact__title::before {
+        content: '\f1ad';
+    }
+
+    & li.contact__address::before {
+        content: '\f3c5';
+        font-weight: 600;
+    }
+
+    & li.contact__phone::before {
+        content: '\f095';
+        font-weight: 600;
+    }
+
+    & li.contact__email::before {
+        content: '\f0e0';
+    }
+
+    & li.contact__director::before {
+        content: '\f508';
+        font-weight: 600;
+    }
+
+    & li.contact__time::before {
+        content: '\f017';
+    }
+
+}
+
+@media (min-width: 992px) {
+
+}

@@ -15,6 +15,8 @@ Route::get('/', 'DefaultController@index')->name('index');
 
 Route::get('/contacts', 'DefaultController@contacts')->name('contacts');
 
+Route::get('/information', 'DefaultController@information')->name('information');
+
 Auth::routes();
 
 Route::group(
