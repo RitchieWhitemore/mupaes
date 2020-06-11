@@ -13,6 +13,8 @@
 
 Route::get('/', 'DefaultController@index')->name('index');
 
+Route::get('/contacts', 'DefaultController@contacts')->name('contacts');
+
 Auth::routes();
 
 Route::group(

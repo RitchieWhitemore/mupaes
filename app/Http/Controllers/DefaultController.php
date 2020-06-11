@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return view('public.index');
     }
+
+    public function contacts()
+    {
+        return view('public.contacts');
+    }
 }

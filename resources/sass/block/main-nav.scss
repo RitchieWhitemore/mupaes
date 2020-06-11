@@ -26,9 +26,24 @@
 
     border-bottom: 1px solid #afd9f9;
 
-    & a {
+    & .main-nav__link {
         font-family: 'Open Sans';
         color: white;
+        position: relative;
+
+        &--active {
+            color: $font-color-orange;
+        }
+
+
+        & i {
+            display: inline-block;
+            color: white;
+            font-size: 18px;
+            position: absolute;
+            top: 0px;
+            right: -18px;
+        }
     }
 }
 
@@ -38,7 +53,7 @@
     padding: 0;
     list-style: none;
 
-    & .main-nav__item {
+    & .main-nav__sub-item {
         margin: 0;
         margin-bottom: 8px;
         padding: 0;
@@ -49,7 +64,7 @@
         }
     }
 
-    & .main-nav__item a {
+    & .main-nav__link {
         font-size: 12px;
     }
 }
@@ -92,9 +107,14 @@
         width: 225px;
         text-align: center;
 
-        & a {
+        & .main-nav__link {
             text-decoration: none;
             position: relative;
+
+            &--active {
+                color: $font-color-yellow;
+                font-weight: 600;
+            }
 
             & i {
                 display: inline-block;
