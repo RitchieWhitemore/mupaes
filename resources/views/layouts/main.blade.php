@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+/**
+ * @var $mainMenu \Lavary\Menu\Menu
+ */
+?>
+
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -32,35 +38,7 @@
     </div>
     <nav class="main-nav main-nav--close">
         <div class="container">
-            <ul class="main-nav__list">
-                <li class="main-nav__item"><a href="{{route('index')}}"
-                                              class="main-nav__link {{Request::routeIs('index') ? 'main-nav__link--active' : ''}}">Главная</a>
-                </li>
-                <li class="main-nav__item"><a href="" class="main-nav__link">Информация<i class="fas fa-caret-down"></i></a>
-
-                    <ul class="main-nav__sub-list">
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Информация о закупочной
-                                деятельности</a></li>
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Отчеты о закупках</a></li>
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Информация о закупках</a></li>
-                    </ul>
-                </li>
-                <li class="main-nav__item"><a href="" class="main-nav__link">Потребителям</a></li>
-                <li class="main-nav__item"><a class="main-nav__link">Закупки<i
-                            class="fas fa-caret-down"></i></a>
-                    <ul class="main-nav__sub-list">
-                        <li class="main-nav__sub-item"><a href="{{route('information')}}"
-                                                          class="main-nav__link {{Request::routeIs('information') ? 'main-nav__link--active' : ''}}">Информация
-                                о закупочной
-                                деятельности</a></li>
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Отчеты о закупках</a></li>
-                        <li class="main-nav__sub-item"><a href="" class="main-nav__link">Информация о закупках</a></li>
-                    </ul>
-                </li>
-                <li class="main-nav__item"><a href="{{route('contacts')}}"
-                                              class="main-nav__link {{Request::routeIs('contacts') ? 'main-nav__link--active' : ''}}">Контакты</a>
-                </li>
-            </ul>
+            @include(config('laravel-menu.views.main-menu'), ['items' => $mainMenu->roots()])
         </div>
 
     </nav>

@@ -20,18 +20,18 @@
     list-style: none;
 }
 
-.main-nav__item {
+.main-nav__list > li {
     padding-bottom: 15px;
     margin-bottom: 15px;
 
     border-bottom: 1px solid #afd9f9;
 
-    & .main-nav__link {
+    & > a {
         font-family: 'Open Sans';
         color: white;
         position: relative;
 
-        &--active {
+        &.active {
             color: $font-color-orange;
         }
 
@@ -53,7 +53,7 @@
     padding: 0;
     list-style: none;
 
-    & .main-nav__sub-item {
+    & > li {
         margin: 0;
         margin-bottom: 8px;
         padding: 0;
@@ -64,8 +64,9 @@
         }
     }
 
-    & .main-nav__link {
+    & > li > a {
         font-size: 12px;
+        color: white;
     }
 }
 
@@ -99,7 +100,7 @@
         justify-content: space-between;
     }
 
-    .main-nav__item {
+    .main-nav__list > li {
         position: relative;
         margin: 0;
         padding: 18px 0;
@@ -107,11 +108,18 @@
         width: 225px;
         text-align: center;
 
-        & .main-nav__link {
+        & a {
+            font-size: 14px;
+            color: white;
+        }
+
+        & > a {
             text-decoration: none;
             position: relative;
+            font-size: 14px;
+            color: white;
 
-            &--active {
+            &.active {
                 color: $font-color-yellow;
                 font-weight: 600;
             }
@@ -138,7 +146,7 @@
             text-align: left;
             width: 250px;
 
-            & .main-nav__sub-item {
+            & > li {
                 padding: 12px 18px;
                 font-size: 14px;
 
