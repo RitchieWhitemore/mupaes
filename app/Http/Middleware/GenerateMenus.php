@@ -22,9 +22,9 @@ class GenerateMenus
              */
             $menu->add('Главная');
             $menu->add('Информация', ['href' => '#', 'nickname' => 'info']);
-            $menu->info->add('Информация о закупочной деятельности', '#');
-            $menu->info->add('Отчеты о закупках', '#');
-            $menu->info->add('Информация о закупках', '#');
+            $menu->info->add('Раскрытие информации', 'information-disclosure');
+            $menu->info->add('Новости и События', 'news');
+            $menu->info->add('Продажа имущества', '#');
 
             $menu->add('Потребителям', '#');
             $menu->add('Закупки', ['nickname' => 'purchase']);

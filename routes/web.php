@@ -15,7 +15,7 @@ Route::get('/', 'DefaultController@index')->name('index');
 
 Route::get('/contacts', 'DefaultController@contacts')->name('contacts');
 
-Route::get('/information', 'DefaultController@information')->name('information');
+Route::get('/information', 'ArticleController@information')->name('information');
 
 Auth::routes();
 
@@ -40,3 +40,7 @@ Route::group(
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::get('/{category}', 'ArticleController@category')->name('category');
+
+Route::get('/{category}/{page}', 'ArticleController@page')->name('page');

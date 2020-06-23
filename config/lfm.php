@@ -50,12 +50,9 @@ return [
             'folder_name' => 'files',
             'startup_view' => 'grid',
             'max_size' => 50000, // size in KB
+            'should_validate_mime' => false,
             'valid_mime' => [
-                'image/jpeg',
-                'image/pjpeg',
-                'image/png',
-                'image/gif',
-                'image/svg+xml',
+
             ],
         ],
         'image' => [
@@ -68,8 +65,6 @@ return [
                 'image/png',
                 'image/gif',
                 'image/svg+xml',
-                'application/pdf',
-                'text/plain',
             ],
         ],
     ],

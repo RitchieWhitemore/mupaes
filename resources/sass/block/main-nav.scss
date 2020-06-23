@@ -103,7 +103,7 @@
     .main-nav__list > li {
         position: relative;
         margin: 0;
-        padding: 18px 0;
+        padding: 10px 0;
         border-bottom: none;
         width: 225px;
         text-align: center;
@@ -121,7 +121,6 @@
 
             &.active {
                 color: $font-color-yellow;
-                font-weight: 600;
             }
 
             & i {
@@ -147,11 +146,15 @@
             width: 250px;
 
             & > li {
-                padding: 12px 18px;
+                padding: 5px 18px;
                 font-size: 14px;
 
                 &:hover {
                     background-color: #004478;
+                }
+
+                & a.active {
+                    color: $font-color-yellow;
                 }
             }
         }

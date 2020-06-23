@@ -108,10 +108,10 @@ class Page extends Model implements HiddenInterface, HasMedia
         })->with('category');
     }
 
-    public function scopeIsPromotions()
+    public function scopeIsCategorySlug($query, string $slug)
     {
-        return $this->whereHas('category', function (Builder $query) {
-            $query->where('slug', '=', 'promotions');
+        return $this->whereHas('category', function (Builder $query) use ($slug) {
+            $query->where('slug', '=', $slug);
         })->with('category');
     }
 

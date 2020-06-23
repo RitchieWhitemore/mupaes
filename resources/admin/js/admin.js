@@ -30,6 +30,7 @@ $(document).ready(function () {
             '//www.tinymce.com/css/codepen.min.css',
         ],
         relative_urls: false,
+        file_picker_types: 'file image media',
         file_picker_callback: function (callback, value, meta) {
             let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
             let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;

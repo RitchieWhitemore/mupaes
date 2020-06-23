@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/scripts.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('resources/img', 'public/img')
     .copyDirectory('node_modules/bootstrap/dist/css', 'public/css')
     .copy('node_modules/jquery/dist/jquery.min.js', 'public/js')
     .options({processCssUrls: false})
