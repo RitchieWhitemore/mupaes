@@ -7,6 +7,7 @@ use App\Http\Requests\PageRequest;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\Models\Media;
+use Woo\GridView\DataProviders\EloquentDataProvider;
 
 class PageController extends Controller
 {
@@ -17,9 +18,19 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages = Page::all();
+        $query = Page::leftJoin('page_categories', 'pages.category_id', '=', 'page_categories.id')
+            ->select(
+                '*',
+                'pages.id as page_id',
+                'pages.name as page_name',
+                'pages.slug as page_slug',
+                'page_categories.id as category_id',
+                'page_categories.name as category_name'
+            )
+            ->orderBy('page_id');
+        $dataProvider = new EloquentDataProvider($query);
 
-        return view('admin.page.index', ['pages' => $pages]);
+        return view('admin.page.index', compact('dataProvider'));
     }
 
     /**

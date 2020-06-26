@@ -28,7 +28,7 @@ class PageRequest extends FormRequest
             'name' => 'required|string|max:255',
             'menu_name' => 'nullable|string|max:255',
             'text' => 'nullable|string',
-            'category_id' => 'integer',
+            'category_id' => 'integer|not_in:0',
             'hidden' => 'integer',
             'slug' => 'nullable|string|unique:pages,slug',
             'image' => 'nullable|image',

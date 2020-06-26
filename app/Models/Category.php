@@ -169,7 +169,7 @@ class Category extends Model implements HasMedia
      */
     public static function getCategoriesForDropdown()
     {
-        $categories = self::defaultOrder()->withDepth()->get();
+        $categories = self::defaultOrder()->select(['id', 'name'])->withDepth()->get();
 
         foreach ($categories as $category) {
             $indent = '';
@@ -180,6 +180,10 @@ class Category extends Model implements HasMedia
             $category->name = $indent . $category->name;
         }
 
-        return $categories->prepend('Выберите категорию', '');
+        //$categories->prepend('Выберите категорию', '');
+
+        return $categories->mapWithKeys(function ($item) {
+            return [$item['id'] => $item['name']];
+        });
     }
 }

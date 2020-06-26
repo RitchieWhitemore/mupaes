@@ -24,7 +24,8 @@
         "mews/purifier": "^3.2",
         "netojose/laravel-bootstrap-4-forms": "^3.0",
         "spatie/laravel-medialibrary": "^7.0.0",
-        "unisharp/laravel-filemanager": "^2.1"
+        "unisharp/laravel-filemanager": "^2.1",
+        "woo/laravel-grid-view": "2.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

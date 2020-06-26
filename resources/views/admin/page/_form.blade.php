@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-sm-2 col-12">
 
-                                {!!Form::select('category_id', 'Категория', \App\Models\Category::getCategoriesForDropdown())!!}
+                                {!!Form::select('category_id', 'Категория', array_merge(['Выберите категорию...'], \App\Models\Category::getCategoriesForDropdown()->toArray()) )!!}
 
                                 {!! Form::text('menu_name', 'Наименование для меню') !!}
 
