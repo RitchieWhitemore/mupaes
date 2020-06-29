@@ -44,7 +44,12 @@
     </nav>
 </header>
 <main>
+
     <div class="row container no-gutters content-container">
+        <div style="width: 100%">
+            @yield('breadcrumbs')
+        </div>
+
         @yield('content')
     </div>
 </main>

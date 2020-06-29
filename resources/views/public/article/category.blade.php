@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('breadcrumbs', Breadcrumbs::render('category', $category))
+
 @section('content')
     <div class="col-12">
         <h1 class="title text-center">{{$category->name}}</h1>
