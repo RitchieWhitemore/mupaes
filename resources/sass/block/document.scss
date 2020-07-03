@@ -42,6 +42,11 @@
     content: '\f1c6';
 }
 
+.document__item-image::before {
+    color: #e84b5c;
+    content: '\f1c5';
+}
+
 @media (min-width: 992px) {
     .document__item {
         padding-left: 40px;

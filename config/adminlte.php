@@ -186,6 +186,12 @@ return [
             'topnav' => true,
         ],
         [
+            'text' => 'Меню',
+            'url' => 'admin/menu',
+            'icon' => 'far fa-fw fa-folder',
+            'active' => ['admin/menu', 'admin/menu/*']
+        ],
+        [
             'text' => 'Категории',
             'url' => 'admin/categories',
             'icon' => 'far fa-fw fa-folder',

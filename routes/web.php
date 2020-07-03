@@ -37,6 +37,19 @@ Route::group(
     }
 );
 
+Route::group(
+    [
+        'prefix' => 'admin',
+        'middleware' => 'auth',
+        'namespace' => '\\Whitemore\\Menu\\Controllers',
+    ],
+    function () {
+        Route::resource('menu', 'MenuController');
+        Route::get('menu/create/{parent?}', 'MenuController@create')->name('menu.create');
+        Route::post('menu/order', 'MenuController@updateOrder')->name('menu.order');
+    }
+);
+
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
