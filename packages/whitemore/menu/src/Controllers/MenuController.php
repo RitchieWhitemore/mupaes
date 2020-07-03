@@ -17,7 +17,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::defaultOrder()->get()->toTree();
+        $menu = Menu::defaultOrder()->withDepth()->having('depth', '>=', 1)->get()->toTree();
 
         $menuBuilder = new MenuBuilder();
         $menuTreeHtml = $menuBuilder->getTree($menu);

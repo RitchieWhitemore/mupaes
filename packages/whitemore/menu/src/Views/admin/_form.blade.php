@@ -11,6 +11,10 @@
     </div>
 
     <div class="col-12">
+        {!!Form::select('item', 'Элемент', \App\Models\Page::asDropdown()) !!}
+    </div>
+
+    <div class="col-12">
         {!!Form::select('hide_children', 'Скрыть вложеные элементы', \Whitemore\Menu\Models\Menu::getHiddenArray())!!}
     </div>
 

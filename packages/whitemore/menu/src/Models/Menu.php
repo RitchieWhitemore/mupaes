@@ -2,6 +2,7 @@
 
 namespace Whitemore\Menu\Models;
 
+use App\Models\Page;
 use App\Traits\HiddenInterface;
 use App\Traits\HiddenTrait;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -17,6 +18,8 @@ class Menu extends Model implements HiddenInterface
         NodeTrait::replicate as replicateNode;
         Sluggable::replicate as replicateSlug;
     }
+
+    const TYPE_PAGE = 0;
 
     protected $table = 'menu';
 
@@ -57,6 +60,20 @@ class Menu extends Model implements HiddenInterface
         return isset($this->parent) ? $this->parent->title : '';
     }
 
+    public function item()
+    {
+        return $this->hasOne(Page::class);
+    }
+
+    public function getUrl()
+    {
+        $result = self::defaultOrder()->ancestorsAndSelf($this->id)->pluck('slug');
+
+        $result->shift();
+
+        return $result->implode('/', 'slug');
+    }
+
     public static function asDropdown()
     {
         $menu = self::defaultOrder()->select(['id', 'title'])->withDepth()->get();
@@ -69,8 +86,6 @@ class Menu extends Model implements HiddenInterface
 
             $item->title = $indent . $item->title;
         }
-
-        $menu->prepend(['id' => 0, 'title' => 'Выберите родителя...'], '');
 
         $result = $menu->mapWithKeys(function ($item) {
             return [$item['id'] => $item['title']];

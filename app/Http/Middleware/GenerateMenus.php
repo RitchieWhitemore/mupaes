@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Lavary\Menu\Builder;
+use Whitemore\Menu\Models\Menu;
 
 class GenerateMenus
 {
@@ -21,20 +22,22 @@ class GenerateMenus
              * @var $menu Builder
              */
             $menu->add('Главная');
-            $menu->add('Информация', ['href' => '#', 'nickname' => 'info']);
-            $menu->info->add('Раскрытие информации', 'information-disclosure');
-            $menu->info->add('Новости и События', 'news');
-            $menu->info->add('Продажа имущества', '#');
 
-            $menu->add('Потребителям', '#');
-            $menu->add('Закупки', ['nickname' => 'purchase']);
-            $menu->purchase->add('Информация о закупочной деятельности', '#');
-            $menu->purchase->add('Отчеты о закупках', '#');
-            $menu->purchase->add('Информация о закупках', '#');
+            $itemsMenu = Menu::defaultOrder()->withDepth()->having('depth', '>=', 1)->get()->toFlatTree();
 
-            $menu->add('Контакты', 'contacts');
+            foreach ($itemsMenu as $item) {
+                $menu->add($item->title, [
+                    'url' => $item->getUrl(),
+                    'parent' => $item->parent->id == 8 ? null : $item->parent->id
+                ])->id($item->id);
+            }
         });
 
         return $next($request);
+    }
+
+    protected function buildSubMenu($item)
+    {
+
     }
 }

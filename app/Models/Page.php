@@ -170,4 +170,13 @@ class Page extends Model implements HiddenInterface, HasMedia
     {
         return $this->meta_keywords ?? '';
     }
+
+    public static function asDropdown()
+    {
+        $pages = self::notHidden()->select('id', 'name')->get();
+
+        $pages->prepend(['id' => 0, 'name' => 'Выберите элемент...'], '');
+
+        return $pages->pluck('name', 'id');
+    }
 }
