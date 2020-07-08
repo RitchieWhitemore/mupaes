@@ -11,6 +11,7 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Str;
+use Whitemore\Menu\Models\Menu;
 
 /**
  * Class Category
@@ -59,6 +60,10 @@ use Str;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Whitemore\Menu\Models\Menu|null $menu
+ * @method static \Kalnoy\Nestedset\Collection|static[] all($columns = ['*'])
+ * @method static \Kalnoy\Nestedset\Collection|static[] get($columns = ['*'])
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category treeList()
  */
 class Category extends Model implements HasMedia
 {
@@ -136,6 +141,11 @@ class Category extends Model implements HasMedia
         return $this->hasMany(Page::class);
     }
 
+    public function menu()
+    {
+        return $this->morphOne(Menu::class, 'item');
+    }
+
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumb-admin')
@@ -164,10 +174,7 @@ class Category extends Model implements HasMedia
         }
     }
 
-    /**
-     * @return Category[]
-     */
-    public static function getCategoriesForDropdown()
+    public function scopeTreeList()
     {
         $categories = self::defaultOrder()->select(['id', 'name'])->withDepth()->get();
 
@@ -180,10 +187,16 @@ class Category extends Model implements HasMedia
             $category->name = $indent . $category->name;
         }
 
-        //$categories->prepend('Выберите категорию', '');
+    }
 
-        return $categories->mapWithKeys(function ($item) {
-            return [$item['id'] => $item['name']];
-        });
+    /**
+     * @return Category[]
+     */
+    public static function asDropdown()
+    {
+
+        $categories = self::treeList()->get()->prepend(['id' => 0, 'name' => 'Выберите элемент...']);
+
+        return $categories->pluck('name', 'id');
     }
 }

@@ -27,6 +27,7 @@
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
         "popper.js": "^1.16.0",
+        "select2": "^4.0.13",
         "style-loader": "^1.1.4",
         "tinymce": "^5.2.1"
     }

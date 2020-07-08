@@ -3,7 +3,9 @@
         <li @lm_attrs($item) class="main-nav__item" @lm_endattrs>
             @if($item->link) <a @lm_attrs($item->link) @if($item->hasChildren()) class="nav-link dropdown-toggle"
                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @else
-                    class="nav-link" @endif @lm_endattrs href="{!! $item->url() !!}">
+                    class="nav-link" @endif
+                @lm_endattrs @if(isset($item->attributes['empty']) && !$item->attributes['empty'])
+                    href="{!! $item->url() !!}" @endif>
                 {!! $item->title !!}
                 @if($item->hasChildren()) <b class="caret"></b> @endif
             </a>

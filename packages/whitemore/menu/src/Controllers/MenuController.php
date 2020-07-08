@@ -3,6 +3,8 @@
 namespace Whitemore\Menu\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Whitemore\Menu\Models\Menu;
 use Whitemore\Menu\Requests\MenuRequest;
@@ -110,4 +112,25 @@ class MenuController extends Controller
 
         return response()->json(['status' => 'success', 'id' => $menu->id, 'newPosition' => $request->position]);
     }
+
+    public function item(Menu $menu)
+    {
+        switch ($menu->item_type) {
+            case Page::class:
+                $page = $menu->item()->firstOrFail();
+                return view('public.article.page', compact('page', 'menu'));
+            case Category::class:
+                $category = $menu->item()->firstOrFail();
+                $pages = $category->pages()->notHidden()->paginate(15);
+                return view('public.article.category', compact('category', 'menu', 'pages'));
+        }
+
+        return null;
+    }
+
+    public function page(Page $page, Menu $menu)
+    {
+        return view('public.article.page', compact('page', 'menu'));
+    }
+
 }

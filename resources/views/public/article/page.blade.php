@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('breadcrumbs', Breadcrumbs::render('page', $page))
+@section('breadcrumbs', Breadcrumbs::render('menu.page', $page, $menu))
 
 @section('content')
     <section class="col-12">

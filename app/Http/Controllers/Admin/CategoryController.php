@@ -90,4 +90,16 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.categories.index');
     }
+
+    public function items()
+    {
+        $categories = Category::treeList()->select(['id', 'name as text'])->get()->prepend([
+            'id' => 0,
+            'text' => 'Выберите элемент...'
+        ]);
+
+        return response()->json([
+            'items' => $categories,
+        ], 200);
+    }
 }

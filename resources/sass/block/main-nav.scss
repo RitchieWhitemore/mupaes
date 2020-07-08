@@ -131,6 +131,11 @@
                 top: 0px;
                 right: -18px;
             }
+
+            &:hover,
+            &:not([href]):hover {
+                color: $font-color-yellow;
+            }
         }
 
 

@@ -86,8 +86,28 @@ Breadcrumbs::register('category', function (Crumbs $crumbs, Category $category) 
     $crumbs->push($category->name, route('category', $category->slug));
 });
 
-// Public - Page
-Breadcrumbs::register('page', function (Crumbs $crumbs, Page $page) {
-    $crumbs->parent('category', $page->category);
-    $crumbs->push($page->name, route('page', ['category' => $page->category->slug, 'page' => $page->slug]));
+//Public - Menu
+
+Breadcrumbs::register('menu.item', function (Crumbs $crumbs, \Whitemore\Menu\Models\Menu $path) {
+    if ($path->parent_id != 1) {
+        $crumbs->parent('menu.item', $path->parent);
+    } else {
+        $crumbs->parent('index');
+    }
+    $crumbs->push($path->title, route('menu.item', $path->getUrl()));
 });
+
+Breadcrumbs::register('menu.page', function (Crumbs $crumbs, Page $page, \Whitemore\Menu\Models\Menu $menu) {
+
+    $menu = $menu->item->id == $page->id ? $menu->parent : $menu;
+
+    $crumbs->parent('menu.item', $menu);
+
+    $crumbs->push($page->name);
+});
+
+// Public - Page
+/*Breadcrumbs::register('page', function (Crumbs $crumbs, Page $page) {
+    $crumbs->parent('menu.item', $page->menu);
+    $crumbs->push($page->name, route('page', ['page' => $page->slug]));
+});*/

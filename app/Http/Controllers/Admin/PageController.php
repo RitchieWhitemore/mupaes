@@ -157,4 +157,14 @@ class PageController extends Controller
             'result' => true,
         ], 200);
     }
+
+    public function items()
+    {
+        $pages = Page::notHidden()->select('id', 'name as text')->get();
+
+        $pages->prepend(['id' => 0, 'text' => 'Выберите элемент...']);
+        return response()->json([
+            'items' => $pages,
+        ], 200);
+    }
 }

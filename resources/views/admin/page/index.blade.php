@@ -27,7 +27,7 @@
             'filter' => [
                 'class' => 'dropdown',
                 'name' => 'category_id',
-                'items' => \App\Models\Category::getCategoriesForDropdown()->toArray(),
+                'items' => \App\Models\Category::asDropdown()->toArray(),
 ]
 ],
         'page_name',

@@ -23,12 +23,19 @@ class GenerateMenus
              */
             $menu->add('Главная');
 
+            /**
+             * @var $itemsMenu Menu
+             */
             $itemsMenu = Menu::defaultOrder()->withDepth()->having('depth', '>=', 1)->get()->toFlatTree();
 
             foreach ($itemsMenu as $item) {
+
+
                 $menu->add($item->title, [
                     'url' => $item->getUrl(),
-                    'parent' => $item->parent->id == 8 ? null : $item->parent->id
+                    'parent' => $item->parent->id == 1 ? null : $item->parent->id,
+                    'empty' => $item->isEmpty(),
+                    'depth' => $item->depth,
                 ])->id($item->id);
             }
         });

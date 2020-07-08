@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('breadcrumbs', Breadcrumbs::render('category', $category))
+@section('breadcrumbs', Breadcrumbs::render('menu.item', $menu))
 
 @section('content')
     <div class="col-12">
@@ -11,7 +11,7 @@
             <ul class="document__list">
                 @foreach($pages as $item)
                     <li class="document__item">
-                        <a href="{{route('page', [$category->slug, $item->slug])}}">{{$item->name}}</a>
+                        <a href="{{route('page', [$category->menu->getUrl(), $item->slug])}}">{{$item->name}}</a>
                     </li>
                 @endforeach
             </ul>

@@ -26,7 +26,7 @@ class MenuServiceProvider extends ServiceProvider
     {
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
-        $this->loadViewsFrom(__DIR__ . '/views', 'menu');
+        $this->loadViewsFrom(__DIR__ . '/Views', 'menu');
 
         $this->publishes([
             __DIR__ . '/resources' => public_path('vendor/menu'),

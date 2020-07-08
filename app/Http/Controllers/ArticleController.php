@@ -22,9 +22,9 @@ class ArticleController extends Controller
         return view('public.article.category', compact('pages', 'category'));
     }
 
-    public function page($categorySlug, $slug)
+    public function page($path, $page)
     {
-        $page = Page::isCategorySlug($categorySlug)->where('slug', '=', $slug)->notHidden()->firstOrFail();
+        //$page = Page::isCategorySlug($categorySlug)->where('slug', '=', $slug)->notHidden()->firstOrFail();
         return view('public.article.page', compact('page'));
     }
 }

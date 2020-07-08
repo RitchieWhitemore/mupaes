@@ -14,6 +14,7 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 use Str;
+use Whitemore\Menu\Models\Menu;
 
 /**
  * Class Page
@@ -55,6 +56,8 @@ use Str;
  * @property-read int|null $media_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page isArticles()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page isPromotions()
+ * @property-read \Whitemore\Menu\Models\Menu|null $menu
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Page isCategorySlug($slug)
  */
 class Page extends Model implements HiddenInterface, HasMedia
 {
@@ -91,6 +94,11 @@ class Page extends Model implements HiddenInterface, HasMedia
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function menu()
+    {
+        return $this->morphOne(Menu::class, 'item');
     }
 
     public function getCategoryName()

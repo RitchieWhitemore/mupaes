@@ -18,14 +18,18 @@ class CreateMenuTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->integer('type')->nullable();
-            $table->integer('item')->nullable();
-            $table->boolean('hide_children');
+            $table->integer('type')->default(0);
+            $table->string('item_type')->nullable();
+            $table->integer('item_id')->nullable();
+            $table->string('link')->nullable();
+            $table->boolean('show_menu')->default(0);
+            $table->boolean('hide_children')->default(0);
             NestedSet::columns($table);
-            $table->boolean('hidden')->index('i-hidden');
+            $table->boolean('hidden')->index('i-hidden')->default(0);
             $table->timestamps();
         });
 
+        \Whitemore\Menu\Models\Menu::create(['title' => 'root']);
 
     }
 

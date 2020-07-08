@@ -29,6 +29,7 @@ class MenuRequest extends FormRequest
             'hidden' => 'integer',
             'hide_children' => 'integer',
             'slug' => 'nullable|string|unique:menu,slug',
+            'link' => 'nullable|url|string'
         ];
 
         $rules['parent_id'] = [
