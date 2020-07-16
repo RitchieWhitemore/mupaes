@@ -15,6 +15,9 @@
                     </li>
                 @endforeach
             </ul>
+            <div class="content">
+                {!! $category->text !!}
+            </div>
         @endif
     </div>
 @endsection

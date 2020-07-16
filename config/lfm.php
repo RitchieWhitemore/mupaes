@@ -49,7 +49,7 @@ return [
         'file' => [
             'folder_name' => 'files',
             'startup_view' => 'grid',
-            'max_size' => 50000, // size in KB
+            'max_size' => 80000, // size in KB
             'should_validate_mime' => false,
             'valid_mime' => [
 

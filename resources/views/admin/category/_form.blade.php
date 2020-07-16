@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-sm-2 col-12">
 
-                                {!!Form::select('parent_id', 'Родитель', \App\Models\Category::getCategoriesForDropdown())!!}
+                                {!!Form::select('parent_id', 'Родитель', \App\Models\Category::asDropdown())!!}
 
                                 {!! Form::text('menu_name', 'Наименование для меню') !!}
 
